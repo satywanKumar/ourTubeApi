@@ -22,7 +22,8 @@ Router.get('/own-video',checkAuth,async (req,res)=>{
         console.log(user)
         const videos = await Video.find({user_id:user._id}).populate('user_id','channelName logoUrl subscribers')
         res.status(200).json({
-            videos:videos
+            videos:videos,
+            'testing':'testing'
         })
     }
     catch(err)
